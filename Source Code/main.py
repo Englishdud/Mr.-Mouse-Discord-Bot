@@ -3,6 +3,7 @@ import discord
 import requests
 import json
 import random
+from replit import db
 
 sad_Words = ["sad", "trash", "depressed", "stupid"]
 
@@ -18,9 +19,23 @@ def get_quote():
   json_data = json.loads(response.text)
   quote = json_data[0]['q'] +  " -" + json_data[0]['a']
   return(quote)
-  
+
+def update_encouragements(encouraging_message):
+  if "encouragements" in db.keys():
+    encouragements = db["encouragements"]
+    encouragements.append(encouraging_message)
+    db["encouragements"] = encouragements
+  else:
+    db["encouragements"] = [encouraging_message]
+
+def delete_encouragement(index):
+  encouragements = db["encouragements"]
+  if len(encouragements) > index:
+    del encouragements[index]
+    db["encouragements"] = encouragements
+    
 @client.event
-async def on_ready():
+async def on_ready(encouraging_message):
   print('We have logged in as {0.user}'.format(client))
 
 @client.event
@@ -35,6 +50,8 @@ async def on_message(message):
 
   if msg.startswith('sudo inspire'):
     await message.channel.send('I ran out of quotes -Rick Astley')
+
+  
 
   if any(word in msg for word in sad_Words):
     await message.channel.send(random.choice(starter_encouragements))
