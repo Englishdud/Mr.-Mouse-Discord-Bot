@@ -1,6 +1,5 @@
 import os
 import discord
-my_secret = os.environ['TOKEN']
 
 client = discord.Client()
 
@@ -15,4 +14,4 @@ async def on_message(message):
   if message.content.startswith('sudo hello'):
     await message.channel.send('Hello...What can I do for you today?')
 
-client.run(my_secret)
+client.run()
