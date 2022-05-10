@@ -1,21 +1,19 @@
-# Security Policy
+# Security/Information
 
-## Supported Versions
+## Supported IDEs
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+repl.it is the only IDE you could use to make a discord bot. Go to file README.md 
+to see the link to the YouTube video (scroll down to the bottm).
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+|   IDE   | Supported         |
+| ------- | ------------------|
+| Atom    | :x:               |
+| vscode  | :x:               |
+| repl.it | :white_check_mark:|
+| pycharm | :x:               |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Report in Discord server.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Go to file README.md and scroll down till you see the link to the discord bot server call @mods and report it or go to reporting channel to report.
